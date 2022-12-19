@@ -1,0 +1,49 @@
+#friends-display-link {
+    text-align: center;
+    display: block;
+    background-color: #FAF9FA;
+    padding: 15px 0px;
+    font-size: 18px;
+    margin-bottom: 18px;
+    margin-top: -15px;
+}
+#friends-display-link i {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.main-screen__channel {
+    margin-top: 25px;
+    border-top: var(--main-boder);
+    padding-top: 15px;
+}
+
+.main-screen__channel-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--font-color);
+}
+
+@keyframes hideSplashScreen {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden; /*마우스에 걸리지 않게 빠지는 것, #splash-screen의 forwards 이후에 클릭 되지 않는 부분 해결*/
+    }
+}
+
+#splash-screen {
+    background-color: var(--yellow);
+    position: absolute; /*모든 화면을 덮기 위해, 가장 가까운 부모에 맞춰 정렬되지만 position: relative이 없음*/
+    height: 100vh;
+    width: 100vw;
+    top: 0; /*주지 않을 시 user-component 위로는 덮지 못 함*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 132px;
+    animation: hideSplashScreen 0.3s ease-in-out forwards; /*forwards: 마지막 속성인 opacity:0가 끝나고도 애니가 유지 (애니가 끝나도 splash-screen 화면이 보이지 않음, 클릭은 안 됨)*/
+    animation-delay: 1s;
+}
