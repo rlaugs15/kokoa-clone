@@ -1,0 +1,27 @@
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px 20px; /*padding:25->this, startu-bar랑 겹침 해결*/
+    margin-bottom: 15px;
+}
+.screen-header__tittle {
+    font-size: 32px;
+    font-weight: 600;
+}
+.screen-header__icon span {
+    margin-left: 25px;
+    position: relative;
+}
+
+@keyframes rotateCog {
+    from {
+        transform: none;
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+.screen-header__icon .fa-gear {
+    animation: rotateCog 3s ease-in-out infinite;
+}
